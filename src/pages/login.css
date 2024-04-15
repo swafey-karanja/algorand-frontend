@@ -1,0 +1,77 @@
+.loginPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+.header{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+    width: 500px;
+    background-color: #dbd5d5;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* .label{
+    margin-left: -140px;
+    font-weight: 400;
+    padding: 10px;
+} */
+
+/* .label {
+    display: block;
+    margin-left: -130px;
+    font-weight: bold;
+    padding: 10px;
+  } */
+
+.inputField{
+    width: 300px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    border-bottom: 1px solid gray;
+    background: transparent;
+}
+
+.inputField:focus{
+    outline: none;
+    border-bottom: 1px solid green;
+}
+
+.submit{
+    margin-top: 20px;
+    width: 100px;
+    padding: 10px;
+    background-color: green;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.forgot-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .forgot-link a {
+    text-decoration: none;
+  }
+  
+  .forgot-link a:hover {
+    font-weight: 500;
+  }
