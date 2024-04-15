@@ -17,23 +17,26 @@ const LoginPage = () => {
 
   return (
     <div className='loginPage'>
-      <h2 className='header'>Login</h2>
-      <form className='form' onSubmit={handleSubmit}>
-        {/* <label className='label' htmlFor="walletId">Blockchain User Wallet ID:</label> */}
-        <input
-          className='inputField'
-          type="text"
-          id="walletId"
-          value={walletId}
-          onChange={handleWalletIdChange}
-          placeholder="Enter your wallet ID"
-        />
-        <button className="submit" type="submit">Login</button>
+      <div className="container">
+        <h2 className='header'>Login</h2>
+        <hr className="line" />
+        <form className='form' onSubmit={handleSubmit}>
+            {/* <label className='label' htmlFor="walletId">Blockchain User Wallet ID:</label> */}
+            <input
+            className='inputField'
+            type="text"
+            id="walletId"
+            value={walletId}
+            onChange={handleWalletIdChange}
+            placeholder="Enter your wallet ID"
+            />
+            <button className="submit" type="submit">Login</button>
 
-        <div className="forgot-link">
-          <a href="#">Forgot your wallet ID?</a>
+            <div className="forgot-link">
+            <a href="#">Forgot your wallet ID?</a>
+            </div>
+        </form>
         </div>
-      </form>
     </div>
   );
 };
