@@ -89,11 +89,13 @@ html, body {
 
 .loginPage{
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #dbd5d5;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 3s ease-in-out; /* Smooth transition for background image */
 }
 
 .container{
