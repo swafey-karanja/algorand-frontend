@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
-import './login.css';
+import './style.css';
 
 const LoginPage = () => {
   const [walletId, setWalletId] = useState('');
+  const [isConnected, setIsConnected] = useState(false);
 
-  const handleWalletIdChange = (event) => {
-    setWalletId(event.target.value);
-  };
+  // ... (existing event handlers)
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Here, you can implement the logic to authenticate the user
-    // with the provided wallet ID using the blockchain technology
-    console.log('Wallet ID:', walletId);
+  const connectWallet = async () => {
+    try {
+      // Code to connect to the user's wallet
+      // This will depend on the blockchain library you're using
+      // Example for Web3.js:
+      // const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+      // setWalletId(accounts[0]);
+      // setIsConnected(true);
+    } catch (error) {
+      console.error('Error connecting wallet:', error);
+    }
   };
 
   return (
@@ -20,22 +25,19 @@ const LoginPage = () => {
       <div className="container">
         <h2 className='header'>Login</h2>
         <hr className="line" />
-        <form className='form' onSubmit={handleSubmit}>
-            {/* <label className='label' htmlFor="walletId">Blockchain User Wallet ID:</label> */}
-            <input
-            className='inputField'
-            type="text"
-            id="walletId"
-            value={walletId}
-            onChange={handleWalletIdChange}
-            placeholder="Enter your wallet ID"
-            />
-            <button className="submit" type="submit">Login</button>
-
-            <div className="forgot-link">
-            <a href="#">Forgot your wallet ID?</a>
-            </div>
-        </form>
+        <p>
+          You will have to connect your blockchain wallet to access this sight.
+        </p>
+        {!isConnected ? (
+            <button className='submit' onClick={connectWallet}>
+            CONNECT YOUR WALLET
+          </button>
+        ) : (
+          <div className="wallet">
+            <p>Wallet ID: {walletId}</p>
+          </div>
+        )}
+        
         </div>
     </div>
   );
